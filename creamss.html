@@ -1,0 +1,644 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<header>
+  <meta charset="UTF-8" />
+  <title>Creamalnd Secondary School – Nyakakoni</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f4f4;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* HEADER & NAVBAR */
+    header {
+      background: #003366;
+      color: #fff;
+      padding: 10px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    .logo img {
+      height: 45px;
+      width: 45px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #fff;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      padding: 70px 8%;
+      background: linear-gradient(135deg, #003366, #0055a5);
+      color: #fff;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .hero-text {
+      max-width: 520px;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-text p {
+      margin-bottom: 10px;
+    }
+
+    .hero-buttons {
+      margin-top: 15px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary,
+    .btn-outline {
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: #ffcc00;
+      color: #003366;
+      font-weight: bold;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #ffcc00;
+      border: 1px solid #ffcc00;
+    }
+
+    .hero-card {
+      background: #fff;
+      color: #222;
+      padding: 20px;
+      border-radius: 12px;
+      width: 320px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    .hero-card h3 {
+      margin-bottom: 10px;
+      color: #003366;
+    }
+
+    .hero-card p {
+      margin-bottom: 4px;
+      font-size: 0.9rem;
+    }
+
+    /* GENERAL SECTION STYLES */
+    section {
+      padding: 45px 8%;
+    }
+
+    section:nth-of-type(even) {
+      background: #ffffff;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #003366;
+      border-left: 4px solid #003366;
+      padding-left: 10px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 18px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #0055a5;
+    }
+
+    .card ul {
+      padding-left: 20px;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+    }
+
+    /* GALLERY */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      height: 150px;
+      object-fit: cover;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    /* DOWNLOAD LINKS */
+    .download-link {
+      display: inline-block;
+      margin: 5px 0;
+      padding: 10px 14px;
+      background: #003366;
+      color: #fff;
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+
+    .download-link:hover {
+      background: #0055a5;
+    }
+
+    /* FORMS */
+    .form-field {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0 15px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 0.95rem;
+    }
+
+    .btn-full {
+      width: 100%;
+      padding: 10px;
+      background: #003366;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+
+    .btn-full:hover {
+      background: #0055a5;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #003366;
+      color: #e0e0e0;
+      text-align: center;
+      padding: 15px 8%;
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: #ffcc00;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        margin-left: 0;
+        margin-right: 15px;
+        margin-bottom: 5px;
+      }
+
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <!-- Replace src with your real logo file (e.g. logo.png) -->
+    <img src="https://via.placeholder.com/80x80?text=Logo" alt="School Logo" />
+    <span>Creamalnd Secondary School</span>
+  </div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#principal">Principal</a>
+    <a href="#academics">Academics</a>
+    <a href="#activities">Activities</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#fees">Fees</a>
+    <a href="#teachers">Teachers</a>
+    <a href="#events">Events</a>
+    <a href="#downloads">Downloads</a>
+    <a href="#portal">Portal</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>Welcome to Creamalnd Secondary School</h1>
+    <p>
+      A leading O‑Level and A‑Level institution located in Nyakakoni,
+      committed to academic excellence, discipline, and character development.
+    </p>
+    <p><strong>Motto:</strong> Education for a Brighter Tomorrow</p>
+    <div class="hero-buttons">
+      <button class="btn-primary" onclick="document.getElementById('admissions').scrollIntoView({behavior:'smooth'})">
+        Apply for Admission
+      </button>
+      <button class="btn-outline" onclick="document.getElementById('portal').scrollIntoView({behavior:'smooth'})">
+        Student Portal
+      </button>
+    </div>
+  </div>
+
+  <div class="hero-card">
+    <h3>Quick Facts</h3>
+    <p><strong>Location:</strong> Nyakakoni, Uganda</p>
+    <p><strong>Levels:</strong> O‑Level & A‑Level</p>
+    <p><strong>Curriculum:</strong> UNEB</p>
+    <p><strong>Strengths:</strong> Sciences, ICT, Sports, Discipline</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2 class="section-title">About Us</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Who We Are</h3>
+      <p>
+        Creamalnd Secondary School is a mixed day and boarding institution
+        offering O‑Level and A‑Level education. We provide a safe, disciplined,
+        and nurturing environment where learners can reach their full potential.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Our Mission</h3>
+      <p>
+        To provide quality education that nurtures responsible, confident, and
+        academically excellent students, equipped to serve their communities
+        and the world.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Our Vision</h3>
+      <p>
+        To be a top-performing secondary school in Nyakakoni and beyond, known
+        for discipline, innovation, and outstanding academic results.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Core Values</h3>
+      <ul>
+        <li>Discipline</li>
+        <li>Integrity</li>
+        <li>Hard Work</li>
+        <li>Respect</li>
+        <li>Excellence</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PRINCIPAL -->
+<section id="principal">
+  <h2 class="section-title">Message from the Principal</h2>
+  <div class="card">
+    <h3>Welcome to Creamalnd Secondary School</h3>
+    <p>
+      Dear students, parents, and visitors,
+    </p>
+    <p>
+      At Creamalnd Secondary School, we believe that every learner has the
+      potential to excel. Our dedicated team of teachers, supportive non‑teaching
+      staff, and committed administration work together to ensure that each
+      student receives the best possible education.
+    </p>
+    <p>
+      We emphasize discipline, hard work, and moral uprightness, alongside
+      strong academics and co‑curricular activities. We invite you to join our
+      community as we shape future leaders with integrity and excellence.
+    </p>
+    <p><strong>— Principal, Creamalnd Secondary School</strong></p>
+  </div>
+</section>
+
+<!-- ACADEMICS -->
+<section id="academics">
+  <h2 class="section-title">Academics</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>O‑Level Subjects</h3>
+      <ul>
+        <li>Mathematics</li>
+        <li>English Language</li>
+        <li>Biology</li>
+        <li>Chemistry</li>
+        <li>Physics</li>
+        <li>Geography</li>
+        <li>History</li>
+        <li>CRE</li>
+        <li>Entrepreneurship</li>
+        <li>Computer Studies</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>A‑Level Combinations</h3>
+      <ul>
+        <li>PCM (Physics, Chemistry, Mathematics)</li>
+        <li>BCM (Biology, Chemistry, Mathematics)</li>
+        <li>HEG (History, Economics, Geography)</li>
+        <li>LEG (Literature, Economics, Geography)</li>
+        <li>ICT as a subsidiary</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Facilities</h3>
+      <ul>
+        <li>Science Laboratories</li>
+        <li>Computer Lab with Internet</li>
+        <li>Well‑stocked Library</li>
+        <li>Spacious Classrooms</li>
+        <li>Sports Grounds</li>
+        <li>Guidance & Counseling Services</li>
+      </ul>
+    </div>
+    <div class="card" id="admissions">
+      <h3>Admissions</h3>
+      <p>We admit students into S1–S4 (O‑Level) and S5–S6 (A‑Level).</p>
+      <ul>
+        <li>Pick an application form from the school office.</li>
+        <li>Attach recent report cards or UNEB results.</li>
+        <li>Attend an interview or placement test.</li>
+        <li>Receive admission letter and fee structure.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ACTIVITIES -->
+<section id="activities">
+  <h2 class="section-title">Co‑Curricular Activities</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Sports</h3>
+      <ul>
+        <li>Football</li>
+        <li>Netball</li>
+        <li>Athletics</li>
+        <li>Volleyball</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Clubs & Societies</h3>
+      <ul>
+        <li>ICT Club</li>
+        <li>Debate Club</li>
+        <li>Scripture Union</li>
+        <li>MDD (Music, Dance & Drama)</li>
+        <li>Environment Club</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Student Leadership</h3>
+      <p>
+        Students have opportunities to serve as prefects, class leaders, club
+        leaders, and team captains, helping them build confidence and
+        responsibility.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <h2 class="section-title">Photo Gallery</h2>
+  <p style="margin-bottom:15px;">
+    A glimpse into life at Creamalnd Secondary School. Replace these images
+    with your real school photos.
+  </p>
+  <div class="gallery">
+    <img src="https://via.placeholder.com/300x200?text=Assembly" alt="Assembly">
+    <img src="https://via.placeholder.com/300x200?text=Classroom" alt="Classroom">
+    <img src="https://via.placeholder.com/300x200?text=Laboratory" alt="Laboratory">
+    <img src="https://via.placeholder.com/300x200?text=Sports+Field" alt="Sports Field">
+  </div>
+</section>
+
+<!-- FEES -->
+<section id="fees">
+  <h2 class="section-title">Fees Structure</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>O‑Level (S1–S4)</h3>
+      <ul>
+        <li>Tuition: 350,000 UGX per term</li>
+        <li>Boarding (optional): 450,000 UGX per term</li>
+        <li>Uniform (full set): 120,000 UGX</li>
+        <li>Registration & ID: 30,000 UGX</li>
+      </ul>
+      <p style="font-size:0.85rem; margin-top:10px;">
+        Note: Fees are subject to change. Please confirm with the school
+        bursar for the latest structure.
+      </p>
+    </div>
+    <div class="card">
+      <h3>A‑Level (S5–S6)</h3>
+      <ul>
+        <li>Tuition: 450,000 UGX per term</li>
+        <li>Boarding (optional): 500,000 UGX per term</li>
+        <li>Uniform (full set): 120,000 UGX</li>
+        <li>Registration & ID: 30,000 UGX</li>
+      </ul>
+      <p style="font-size:0.85rem; margin-top:10px;">
+        Science combinations may have a small practical fee; details available
+        at the office.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- TEACHERS -->
+<section id="teachers">
+  <h2 class="section-title">Our Teachers</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Mr. John Mwesigwa</h3>
+      <p><strong>Subject:</strong> Mathematics</p>
+      <p><strong>Experience:</strong> 12 years</p>
+      <p>Dedicated to helping students master logical thinking and problem‑solving.</p>
+    </div>
+    <div class="card">
+      <h3>Ms. Sarah Akello</h3>
+      <p><strong>Subject:</strong> Biology</p>
+      <p><strong>Experience:</strong> 9 years</p>
+      <p>Passionate about science and hands‑on practical learning.</p>
+    </div>
+    <div class="card">
+      <h3>Mr. Robert Tumwine</h3>
+      <p><strong>Subject:</strong> ICT</p>
+      <p><strong>Experience:</strong> 7 years</p>
+      <p>Focuses on digital skills, coding, and modern technology.</p>
+    </div>
+    <div class="card">
+      <h3>Mrs. Grace Nabirye</h3>
+      <p><strong>Subject:</strong> English</p>
+      <p><strong>Experience:</strong> 10 years</p>
+      <p>Committed to improving communication, writing, and reading skills.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS & ANNOUNCEMENTS -->
+<section id="events">
+  <h2 class="section-title">Events & Announcements</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Upcoming Events</h3>
+      <ul>
+        <li>Inter‑House Sports Competition — 12th March</li>
+        <li>Visitation Day — 5th April</li>
+        <li>Mid‑Term Exams — Starting 20th April</li>
+        <li>Career Guidance Week — 10th May</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Latest Announcements</h3>
+      <ul>
+        <li>New ICT lab computers have been installed.</li>
+        <li>Updated school uniform supplier — check notice board.</li>
+        <li>Registration for debate club is now open.</li>
+        <li>Parents meeting scheduled for next month.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- DOWNLOADS -->
+<section id="downloads">
+  <h2 class="section-title">Downloadable Documents</h2>
+  <p style="margin-bottom:10px;">
+    Click to download important school documents. Replace the <code>#</code> links
+    with real PDF file paths when you upload them.
+  </p>
+  <div class="card">
+    <a class="download-link" href="#">Admission Form (PDF)</a><br>
+    <a class="download-link" href="#">School Prospectus (PDF)</a><br>
+    <a class="download-link" href="#">Fees Structure (PDF)</a><br>
+    <a class="download-link" href="#">School Rules & Regulations (PDF)</a>
+  </div>
+</section>
+
+<!-- STUDENT PORTAL (FRONT-END ONLY) -->
+<section id="portal">
+  <h2 class="section-title">Student Portal Login</h2>
+  <div class="card" style="max-width:400px; margin:auto;">
+    <h3>Login to Your Account</h3>
+    <p style="font-size:0.9rem; margin-bottom:10px;">
+      This is a demo login form. To make it fully functional, you will need a backend (database and server).
+    </p>
+    <form onsubmit="alert('Demo only – connect to a real system to enable login.'); return false;">
+      <label>Student ID</label>
+      <input class="form-field" type="text" placeholder="Enter your Student ID" required>
+
+      <label>Password</label>
+      <input class="form-field" type="password" placeholder="Enter your password" required>
+
+      <button class="btn-full" type="submit">Login</button>
+    </form>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2 class="section-title">Contact Us</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Address</h3>
+      <p>Creamalnd Secondary School</p>
+      <p>Nyakakoni, Uganda</p>
+    </div>
+    <div class="card">
+      <h3>Phone & Email</h3>
+      <p>Tel: +256 7XX XXX XXX</p>
+      <p>Email: creamalndschool@gmail.com</p>
+    </div>
+    <div class="card">
+      <h3>Office Hours</h3>
+      <p>Monday – Friday: 8:00 AM – 5:00 PM</p>
+      <p>Saturday: 9:00 AM – 1:00 PM</p>
+      <p>Closed on Sundays and public holidays.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2025 Creamalnd Secondary School, Nyakakoni. All rights reserved.
+  <br>
+  Designed for the Creamalnd community.
+</footer>
+
+</body>
+</html>
